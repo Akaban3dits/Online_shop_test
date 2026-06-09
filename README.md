@@ -2,149 +2,49 @@
 
 Prueba técnica desarrollada con:
 
-- Backend: Node.js + Express + TypeScript
-- Frontend: Next.js + TypeScript + Tailwind CSS
-- Testing: Jest + Supertest
+* Backend: Node.js + Express + TypeScript
+* Frontend: Next.js + TypeScript + Tailwind CSS
+* Testing: Jest + Supertest
 
----
+## Instalación y ejecución
 
-## Clonar el repositorio
+Abrir Visual Studio Code, crear una carpeta para el proyecto y ejecutar:
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd online_shop_test
+git clone https://github.com/TU-USUARIO/Online_shop_test.git
+cd Online_shop_test
 ```
 
----
-
-## Backend
-
-### Entrar a la carpeta
+### Backend
 
 ```bash
 cd back-end
-```
-
-### Instalar dependencias
-
-```bash
 npm install
-```
-
-### Ejecutar en desarrollo
-
-```bash
-npm run dev
-```
-
-El servidor quedará disponible en:
-
-```txt
-http://localhost:3000
-```
-
-### Ejecutar pruebas
-
-```bash
+npm run dev 
 npm test
 ```
 
----
+### Frontend
 
-## Frontend
-
-Abrir una nueva terminal.
-
-### Entrar a la carpeta
+Abrir una nueva terminal:
 
 ```bash
 cd front-end
-```
-
-### Instalar dependencias
-
-```bash
 npm install
-```
-
-### Ejecutar en desarrollo
-
-```bash
 npm run dev
 ```
 
-La aplicación quedará disponible en:
 
-```txt
-http://localhost:3001
-```
+## qué te ayudó la IA
 
-> El puerto puede variar si otro proceso está utilizando el puerto por defecto.
+Resolvio principalmente el tema de diseño en next.js y algunos errores de compatibilidad -Claude
+Base para correr el servidor - Chatgpt
+Mockup- v0.app
 
----
+## Que resolvi yo
 
-## Endpoint principal
+Generacion y estructura de los endpoints con base al uso de express validator y también de interfaces para crear los servicios
 
-### Procesar pago
+# Que me costo
+Unicamente el error de compatibilidad en el jest
 
-```http
-POST /webhooks/pago
-```
-
-Ejemplo:
-
-```json
-{
-  "order_id": "1023",
-  "status": "paid",
-  "amount": 1450,
-  "items": [
-    {
-      "sku": "BRX-01",
-      "qty": 2
-    }
-  ]
-}
-```
-
----
-
-## Consulta de órdenes
-
-```http
-GET /orders
-```
-
-Retorna la lista de órdenes procesadas.
-
----
-
-## Pruebas implementadas
-
-Se agregaron pruebas automatizadas para:
-
-- Procesamiento correcto de una orden válida.
-- Prevención de procesamiento duplicado para el mismo `order_id`.
-
----
-
-## Enfoque de la solución
-
-- Se implementó un webhook para recibir notificaciones de pago.
-- Las órdenes se almacenan en memoria para simplificar la solución.
-- Se utilizó `express-validator` para validar la información recibida.
-- Se implementó lógica de idempotencia para evitar procesar dos veces la misma orden.
-- Se descuenta inventario únicamente cuando una orden es procesada correctamente.
-- Se desarrolló una interfaz sencilla en Next.js para visualizar las órdenes recibidas.
-
----
-
-## Uso de IA
-
-La IA fue utilizada como apoyo para:
-
-- Resolver dudas puntuales de configuración.
-- Generar ideas para la estructura inicial del proyecto.
-- Revisar posibles mejoras y validaciones.
-
-La implementación, adaptación de la lógica de negocio, pruebas y estructura final fueron ajustadas y verificadas manualmente.
