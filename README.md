@@ -11,7 +11,7 @@ Prueba técnica desarrollada con:
 Abrir Visual Studio Code, crear una carpeta para el proyecto y ejecutar:
 
 ```bash
-git clone https://github.com/TU-USUARIO/Online_shop_test.git
+git clone https://github.com/Akaban3dits/Online_shop_test.git
 cd Online_shop_test
 ```
 
@@ -35,16 +35,16 @@ npm run dev
 ```
 
 
-## qué te ayudó la IA
+## ¿Qué te ayudó la IA?
 
 Resolvio principalmente el tema de diseño en next.js y algunos errores de compatibilidad -Claude
 Base para correr el servidor - Chatgpt
 Mockup- v0.app
 
-## Que resolvi yo
+## ¿Qué resolví yo?
 
 Generacion y estructura de los endpoints con base al uso de express validator y también de interfaces para crear los servicios
 
-# Que me costo
+## ¿Qué me costo?
 Unicamente el error de compatibilidad en el jest
 
