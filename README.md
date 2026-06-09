@@ -86,17 +86,4 @@ Body (raw JSON):
 }
 ```
 
-Respuesta esperada:
-
-```json
-{
-  "success": true
-}
-```
-
-Después de procesar el webhook:
-
-- El estado de la orden debe actualizarse a `paid`.
-- El inventario del SKU `BRX-01` debe descontar 10 unidades.
-- El dashboard del frontend reflejará los cambios al recargar la página.
 
