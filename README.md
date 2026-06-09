@@ -48,3 +48,55 @@ Generacion y estructura de los endpoints con base al uso de express validator y 
 ## ¿Qué me costo?
 Unicamente el error de compatibilidad en el jest
 
+## Prueba del webhook con Postman
+
+Una vez levantado el backend:
+
+```bash
+cd back-end
+npm install
+npm run dev
+```
+
+Realizar una petición POST a:
+
+```http
+http://localhost:3000/webhooks/pago
+```
+
+Headers:
+
+```http
+Content-Type: application/json
+```
+
+Body (raw JSON):
+
+```json
+{
+  "order_id": "1029",
+  "status": "paid",
+  "amount": 1450,
+  "items": [
+    {
+      "sku": "BRX-01",
+      "qty": 10
+    }
+  ]
+}
+```
+
+Respuesta esperada:
+
+```json
+{
+  "success": true
+}
+```
+
+Después de procesar el webhook:
+
+- El estado de la orden debe actualizarse a `paid`.
+- El inventario del SKU `BRX-01` debe descontar 10 unidades.
+- El dashboard del frontend reflejará los cambios al recargar la página.
+
